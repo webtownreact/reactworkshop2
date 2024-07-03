@@ -12,8 +12,9 @@ module.exports = (env) => {
     devtool: isProductionMode ? false : 'inline-source-map',
     mode: isProductionMode ? 'production' : 'development',
     output: {
-      filename: '[name].[contenthash].js',
+      filename: isProductionMode ? '[name].[contenthash].js' : '[name].js',
       clean: true,
+      publicPath: '/',
     },
     module: {
       rules: [
@@ -52,6 +53,7 @@ module.exports = (env) => {
     ],
     devServer: {
       static: path.resolve(__dirname, 'dist'),
+      historyApiFallback: true,
       open: false,
       hot: true,
     },
