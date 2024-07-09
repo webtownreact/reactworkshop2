@@ -1,0 +1,7 @@
+{
+  "*.js": "eslint .",
+  "*.ts": "eslint .",
+  "*.tsx": "eslint .",
+  "*.css": "stylelint --fix",
+  "*.pcss": "stylelint --fix"
+}
